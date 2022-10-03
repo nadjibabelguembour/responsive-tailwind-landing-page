@@ -2,12 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background-image: url("../img/bg-tablet-pattern.svg");
+
+@layer base {
+    /* h1 {
+        @apply text-9xl;
+    } */
+    h2 {
+        @apply text-5xl
+    }
+    p{
+        @apply text-[#848486]
+    }
+    li{
+        @apply text-[#848486] text-[20px]
+    }
+}
+.home{
+    background-image: url("../images/AnimatedShape.svg");
     background-repeat: no-repeat;
-    background-size: 800px;
-    background-position: 90% -25%;
-    
+    background-size: cover;
+}
+
+.wave{
+    width: 100%;
+    position: absolute;
+    left:0;
+    bottom:-75px;
+}
+.buttons a:nth-child(1){
+    background: url(../images/btn-svg-filled.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding-bottom: 8px;
+    width: 170px;
+    height: 80px;
 }
 #cta{
     background-image: url("../img/bg-simplify-section-desktop.svg");
@@ -98,3 +126,40 @@ body{
     -ms-transform: rotate(-45deg) translateY(6px) translate(-6px);
     -o-transform: rotate(-45deg) translateY(6px) translate(-6px);
 }
+
+/* description section */
+.description .details-picture {
+    position: relative;}
+    
+.description .details-picture  img {
+    position: absolute;
+    top:110px;
+    left:45px;
+    width: 500px;
+    }
+
+.description .details-picture svg {
+        
+        filter: drop-shadow( 4px 3px 6px rgba(139, 138, 138, 0.25)) drop-shadow( -4px -3px 6px rgba(121, 120, 120, 0.22));
+        transform: rotate(10deg);
+    }
+.icon{
+        
+            position: relative;
+
+        }
+        
+.icon i{
+            position: absolute;
+            top: 10px;
+            margin-left: -15px;
+            color: white;
+            font-size: 22px;
+        }
+.wave{
+    width: 100%;
+    /* position: absolute; */
+    left:0;
+    bottom:-75px;
+}
+       

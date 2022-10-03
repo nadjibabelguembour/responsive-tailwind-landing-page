@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js}"],
+  
   theme: {
     screens:{
       sm:'480px',
@@ -20,6 +21,10 @@ module.exports = {
         veryPaleRed: 'hsl(13,100%,96%)',
         veryLightGray: 'hsl(0,0%,98%)',
       },
+      backgroundImage: {
+        'bodyBG': "url('../images/3.png')",
+        
+      }
     },
   },
   plugins: [],
