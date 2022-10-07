@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html x-data="{ dark: false }" :class="dark ? 'dark' : '' " lang="en" class="scroll-smooth ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+  </head>
+
+  <body class="text-gray-800 font-mono bg-bodyBG">
+    <div
+      class="wrapper dark:text-gray-300 dark:bg-gradient-to-r dark:from-[#01030cf7] dark:to-[#0b1122e6]"
+    >
+      <!--to be removed-->
+      <!-- 1ST SECTION:                   HOME                -->
+      <div id="home" class="home text-white relative dark:bg-none">
+        <nav class="relative container mx-auto p-6 pt-12">
+          <div class="flex items-center justify-between">
+            <!--logo-->
+            <div class="left flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                style="fill: #000000"
+              >
+                <path
+                  fill="#29b6f6"
+                  fill-rule="evenodd"
+                  d="M24,4C12.96,4,4.01,12.954,4.01,24	c0,10.141,7.545,18.519,17.325,19.823v-4.03c0-1.136-0.716-2.158-1.793-2.519c-5.643-1.897-9.68-7.293-9.531-13.611	c0.181-7.692,6.444-13.74,14.133-13.662c7.662,0.078,13.849,6.316,13.849,14c0,0.72-0.056,1.44-0.164,2.151	c-1.713,11.291-16.412,17.637-16.492,17.672C22.208,43.939,23.097,44,24,44c11.04,0,19.99-8.954,19.99-20S35.04,4,24,4"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <div class="font-bold text-2xl ml-5 dark:text-gray-300">Logo</div>
+            </div>
+            <!--menu items-->
+            <div class="hidden md:flex space-x-6 font-bold text-xl">
+              <!-- hidden md:flex ie on md screens show flex else hidden  (md goes for medium and it is mobile first it will start hidden then changes)-->
+              <a
+                href="#home"
+                class="hover:scale-105 hover:border-b-2 hover:border-white  dark:text-gray-300"
+                >Home</a
+              >
+              <a
+                href="#testimonials"
+                class="hover:scale-105 hover:border-b-2 hover:border-white  dark:text-gray-300"
+                >Services</a
+              >
+              <a
+                href="#description"
+                class="hover:scale-105 hover:border-b-2 hover:border-white  dark:text-gray-300"
+                >Courses</a
+              >
+              <a
+                href="#cards"
+                class="hover:scale-105 hover:border-b-2 hover:border-white  dark:text-gray-300"
+                >Forum</a
+              >
+              <!--start of darkmode button-->
+              <button
+                @click="dark = !dark"
+                class="hidden md:flex btn btn-icon btn-gray w-max focus:outline-none"
+              >
+                <!-- Moon -->
+                <svg
+                  x-show="!dark"
+                  class="h-6 text-indigo-500 mr-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  />
+                </svg>
+                <!-- Sun -->
+                <svg
+                  x-show="dark"
+                  class="h-6 text-yellow-200 mr-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="leading-4"></span>
+              </button>
+              <!-- end dark mode button-->
+            </div>
+            <!--navbar nn-->
+            <div class="flex">
+             
+              <a
+                class="shadow-sm shadow-gray-500 px-10 py-2 bg-gradient-to-r from-[#00cee6] to-[#00e4ee] border-solid text-white font-bold rounded-md hover:scale-110 hidden md:flex"
+                href=""
+              >
+                Subscribe
+              </a>
+            </div>
+
+            <!--start of darkmode button-->
+            <button
+              @click="dark = !dark"
+              class="md:hidden btn btn-icon btn-gray w-max focus:outline-none absolute right-16 top-14"
+            >
+              <!-- Moon -->
+              <svg
+                x-show="!dark"
+                class="h-6 text-indigo-500 mr-1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                />
+              </svg>
+              <!-- Sun -->
+              <svg
+                x-show="dark"
+                class="h-6 text-yellow-200 mr-1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span class="leading-4"></span>
+            </button>
+            <!-- end dark mode button-->
+
+            <!-- Hamburger menu-->
+            <button
+              id="menu-btn"
+              class="block hamburger md:hidden focus: outline-none"
+            >
+              <span
+                class="bg-white hamburger-top"
+                style="background: white"
+              ></span>
+              <span
+                class="bg-white hamburger-middle"
+                style="background: white"
+              ></span>
+              <span
+                class="bg-white hamburger-bottom"
+                style="background: white"
+              ></span>
+            </button>
+          </div>
+          <!-- Mobile Menu-->
+          <div class="md:hidden">
+            <div
+              id="menu"
+              class="text-red-700 absolute flex-col hidden items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md dark:bg-slate-500"
+              style="color: blue"
+            >
+              <a
+                href="#home"
+                class="hover:text-darkGrayishBlue dark:text-gray-200 dark:hover:text-blue-900"
+                >Home</a
+              >
+              <a
+                href="#testimonials"
+                class="hover:text-darkGrayishBlue dark:text-gray-200 dark:hover:text-blue-900"
+                >Services</a
+              >
+              <a
+                href="#description"
+                class="hover:text-darkGrayishBlue dark:text-gray-200 dark:hover:text-blue-900"
+                >Courses</a
+              >
+              <a
+                href="#cards"
+                class="hover:text-darkGrayishBlue dark:text-gray-200 dark:hover:text-blue-900"
+                >Forum</a
+              >
+            </div>
+          </div>
+        </nav>
+        <!--hero section-->
+        <div id="hero ">
+          <!--flex container-->
+          <div
+            class="container flex flex-col-reverse gap-4 md:flex-row items-center justify-between mx-auto mt-10 space-y-0 space-x-0"
+          >
+            <!--Image-->
+            <div class="w-full mb-32">
+              <img src="../images/1.png" />
+            </div>
+            <!--left items-->
+            <div class="flex flex-col mb-32 space-y-12 md:w-1/2">
+              <span class="text-xl text-center md:text-left dark:text-gray-300"
+                ><span class="text-blue-500 font-extrabold text-2xl">#1</span>
+                platform in the world</span
+              >
+              <h1
+                class="max-w-md font-bold text-center text-3xl md:text-6xl md:text-left dark:text-blue-500"
+              >
+                LAERN <br />THE BEST TECHNOLOGIES
+              </h1>
+              <p
+                class="max-w-sm text-justify px-4 text-white md:text-left font-bold text-xl dark:text-gray-300"
+              >
+                Manage makes it simple for software teams to plan day-to-day
+                tasks while keeping the larger team goals in view.
+              </p>
+              <div class="flex justify-center md:justify-start">
+                <div
+                  class="buttons flex flex-col gap-3 md:grid md:grid-cols-2 md:gap-1 items-center mt-3 my-3 w-full pb-24"
+                >
+                  <a
+                    href="#home"
+                    class="px-8 items-center text-center pt-6 font-bold mr-8 hover:scale-110 hover:border-blue-500 hover:transition"
+                    >Book Now</a
+                  >
+                  <a
+                    href="#testimonials"
+                    class="items-center mr-7 justify-center text-center font-bold hover:scale-110"
+                    >Learn More
+                    <i
+                      class="bx bx-right-arrow-alt items-center justify-center text-center"
+                    ></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+
+        <div class="wave hidden md:block w-full  absolute dark:hidden">
+          <img src="../images/wave-haikei.svg" alt="" />
+        </div>
+      </div>
+      <button
+        type="button"
+        data-mdb-ripple="true"
+        data-mdb-ripple-color="light"
+        class="inline-block p-3 bg-[#0059C9] text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out bottom-5 right-5 z-[1000]"
+        id="btn-back-to-top"
+      >
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          class="w-4 h-4"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            fill="currentColor"
+            d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"
+          ></path>
+        </svg>
+      </button>
+      <!-- 2ND SECTION:                    CARDS              -->
+      <!--Testimanials section-->
+      <section id="testimonials">
+        <!--container for the headings and the testim. blocks-->
+        <!-- <div class="container max-w-6xl px-5 mx-auto mt-32 text-center pb-16"> -->
+        <div
+          class="container max-w-6xl px-5 mx-auto mt-[-9rem] z-10 relative text-center pb-16"
+        >
+          <div
+            class="container mx-auto flex flex-col mt-24 md:flex-row md:space-x-6"
+          >
+            <!--first testi-->
+            <div
+              class="flex flex-col mb-2 items-center p-6 space-y-6 rounded-lg md:w-1/3 dark:bg-[#07071b] bg-white shadow-2xl border-stone-400 shadow-slate-400"
+            >
+              <img src="../images/icon1.png" class="w-[70%] mt-2" alt="" />
+              <h5
+                class="text-2xl font-bold mt-8 mb-8 text-[#00375D] dark:text-blue-500"
+              >
+                Nadjiba Belguembour
+              </h5>
+              <p
+                class="text-[1rem] leading-8 text-[#848486] pb-4 dark:text-gray-200"
+              >
+                “Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown
+                printer ”
+              </p>
+              <a
+                href="#"
+                class="text-[#0000EE] pb-8 font-bold text-lg hover:scale-105"
+                >Read More</a
+              >
+            </div>
+
+            <!--second testi-->
+            <div
+              class="flex flex-col mb-2 items-center p-6 space-y-6 rounded-lg md:w-1/3 dark:bg-[#07071b] bg-white shadow-2xl border-stone-400 shadow-slate-400"
+            >
+              <img src="../images/icon2.png" class="w-[70%] mt-2" alt="" />
+              <h5
+                class="text-2xl font-bold mt-10 mb-10 text-[#00375D] dark:text-blue-500"
+              >
+                Fatima Boukhatem
+              </h5>
+              <p
+                class="text-[1rem] leading-8 text-[#848486] pb-4 dark:text-gray-200"
+              >
+                “Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown
+                printer ”
+              </p>
+              <a
+                href="#"
+                class="text-[#0000EE] pb-8 font-bold text-lg hover:scale-105"
+                >Read More</a
+              >
+            </div>
+
+            <!--third testi-->
+            <div
+              class="flex flex-col mb-2 items-center p-6 space-y-6 rounded-lg md:w-1/3 dark:bg-[#07071b] bg-white shadow-2xl border-stone-400 shadow-slate-400"
+            >
+              <img src="../images/icon3.png" class="w-[70%] mt-2" alt="" />
+              <h5
+                class="text-2xl font-bold mt-10 mb-12 text-[#00375D] dark:text-blue-500"
+              >
+                Abdennour Bouhanna
+              </h5>
+              <p
+                class="text-[1rem] leading-8 text-[#848486] pb-4 dark:text-gray-200"
+              >
+                “Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown
+                printer ”
+              </p>
+              <a
+                href="#"
+                class="text-[#0000EE] pb-8 font-bold text-lg hover:scale-105"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Description section:-->
+
+      <section class="third" id="description">
+        <div class="icon container  mx-auto text-center animate-bounce">
+          <svg class="mx-auto z-20" width="50" height="50">
+            <polygon
+              fill="#00c0e6"
+              points="37.32050807568878,30 20,40 2.679491924311229,30.000000000000007 2.679491924311222,10.000000000000005 19.999999999999996,0 37.32050807568878,10.000000000000007"
+            ></polygon>
+          </svg>
+          <i class="bx bx-detail z-30"></i>
+        </div>
+        <h1
+          class="text-4xl md:text-4xl text-center text-[#00375d] font-bold my-0 dark:text-blue-500"
+        >
+          This is just a title
+        </h1>
+
+        <div
+          class="description container max-w-6xl px-5 mx-auto text-center pb-16 flex-col-reverse md:grid md:grid-cols-5 md:container"
+        >
+          <div
+            class="item1 col-span-2 details mb-10 mx-auto flex flex-col items-center justify-center"
+          >
+            <ul
+              class="leading-5 items-center justify-center my-auto md:items-center"
+            >
+              <li class="text-center md:text-left text-xl mb-6">
+                <i class="bx bx-badge-check text-blue-500"></i>
+                <span class="dark:text-gray-200"
+                  >Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry</span
+                >
+              </li>
+              <li class="text-center md:text-left text-xl mb-6">
+                <i class="bx bx-badge-check text-blue-500"></i>
+                <span class="dark:text-gray-200"
+                  >Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry</span
+                >
+              </li>
+              <li class="text-center md:text-left text-xl mb-6">
+                <i class="bx bx-badge-check text-blue-500"></i>
+                <span class="dark:text-gray-200"
+                  >Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry</span
+                >
+              </li>
+              <li class="text-center md:text-left text-xl mb-6">
+                <i class="bx bx-badge-check text-blue-500"></i>
+                <span class="dark:text-gray-200"
+                  >Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry</span
+                >
+              </li>
+              <li class="text-center md:text-left text-xl mb-6">
+                <i class="bx bx-badge-check text-blue-500"></i>
+                <span class="dark:text-gray-200"
+                  >Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div
+            class="item1 col-span-3 details-picture mx-auto items-center my-auto hidden lg:block hover:scale-105"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="584"
+              height="584"
+              class="hidden lg:flex dark:hidden"
+            >
+              <path
+                stroke="none"
+                fill="#fff"
+                d="M265.5 7.2997821335251a53 53 0 0 1 53 0l206.80762113533 119.40043573295a53 53 0 0 1 26.5 45.899346400575l0 238.8008714659a53 53 0 0 1 -26.5 45.899346400575l-206.80762113533 119.40043573295a53 53 0 0 1 -53 0l-206.80762113533 -119.40043573295a53 53 0 0 1 -26.5 -45.899346400575l3.8032855285204e-13 -238.8008714659a53 53 0 0 1 26.5 -45.899346400575"
+              ></path>
+            </svg>
+            <!--only display this svg in dark mode-->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="584"
+              height="584"
+              class="hidden dark:lg:flex"
+            >
+              <path
+                stroke="none"
+                fill="#07071b"
+                d="M265.5 7.2997821335251a53 53 0 0 1 53 0l206.80762113533 119.40043573295a53 53 0 0 1 26.5 45.899346400575l0 238.8008714659a53 53 0 0 1 -26.5 45.899346400575l-206.80762113533 119.40043573295a53 53 0 0 1 -53 0l-206.80762113533 -119.40043573295a53 53 0 0 1 -26.5 -45.899346400575l3.8032855285204e-13 -238.8008714659a53 53 0 0 1 26.5 -45.899346400575"
+              ></path>
+            </svg>
+            <!--end------------------------------>
+            <img src="../images/2.png" alt="" />
+          </div>
+          <img
+            src="../images/2.png"
+            alt=""
+            class="flex lg:hidden item1 col-span-3"
+          />
+        </div>
+      </section>
+
+      <!-- the fourth section -->
+      <!--other cards-->
+      <section id="cards">
+        <div class="icon container mx-auto text-center animate-bounce">
+          <svg class="mx-auto z-20" width="50" height="50">
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color: rgba(0, 24, 117, 0.97)" />
+                <stop
+                  offset="100%"
+                  style="stop-color: rgba(0, 118, 222, 0.9)"
+                />
+              </linearGradient>
+            </defs>
+            <polygon
+              fill="url(#grad1)"
+              points="37.32050807568878,30 20,40 2.679491924311229,30.000000000000007 2.679491924311222,10.000000000000005 19.999999999999996,0 37.32050807568878,10.000000000000007"
+            ></polygon>
+          </svg>
+
+          <i class="bx bx-detail z-30"></i>
+        </div>
+        <h1
+          class="text-4xl md:text-4xl text-center text-[#00375d] font-bold my-0 dark:text-blue-500"
+        >
+          Frequently Asked Questions
+        </h1>
+        <!--container for the headings and the testim. blocks-->
+        <div
+          class="container max-w-6xl px-5 mx-auto mt-32 text-center pb-16 flex-col"
+        >
+          <div
+            class="container mx-auto flex flex-col mt-24 md:flex-row md:space-x-6 mb-24"
+          >
+            <!--first testi-->
+            <div
+              class="flex flex-col mb-2 items-center p-6 space-y-6 rounded-lg md:w-1/3 dark:bg-[#07071b] bg-white shadow-2xl border-stone-400 shadow-slate-400"
+            >
+              <!-- <div class="rounded-full e h-[76.8px] w-[76.8px] "> -->
+              <img src="../images/github3.png" class="w-[40%] mt-1" alt="" />
+              <!-- <i class="fa-brands fa-github text-red-600 w-16 h-16 mt-12 border-solid border-red-500 relative  "></i> -->
+
+              <!-- </div> -->
+
+              <h5
+                class="text-2xl font-bold mt-8 mb-8 text-[#00375D] dark:text-blue-500"
+              >
+                Title the card
+              </h5>
+              <p
+                class="text-[1rem] leading-8 text-[#848486] pb-0 dark:text-gray-200"
+              >
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry
+              </p>
+              <a
+                href="#"
+                class="text-[#0000EE] pb-4 font-bold text-lg hover:scale-105"
+                >Read More</a
+              >
+            </div>
+
+            <!--second testi-->
+            <div
+              class="flex flex-col mb-2 items-center p-6 space-y-6 rounded-lg md:w-1/3 dark:bg-[#07071b] bg-white shadow-2xl border-stone-400 shadow-slate-400"
+            >
+              <img src="../images/discord.png" class="w-[40%] mt-1" alt="" />
+              <h5
+                class="text-2xl font-bold mt-10 mb-10 text-[#00375D] dark:text-blue-500"
+              >
+                Title for card
+              </h5>
+              <p
+                class="text-[1rem] leading-8 text-[#848486] pb-0 dark:text-gray-200"
+              >
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry
+              </p>
+              <a
+                href="#"
+                class="text-[#0000EE] pb-4 font-bold text-lg hover:scale-105"
+                >Read More</a
+              >
+            </div>
+
+            <!--third testi-->
+            <div
+              class="flex flex-col mb-2 items-center p-6 space-y-6 rounded-lg md:w-1/3 dark:bg-[#07071b] bg-white shadow-2xl border-stone-400 shadow-slate-400"
+            >
+              <img src="../images/slack.png" class="w-[40%] mt-1" alt="" />
+              <h5
+                class="text-2xl font-bold mt-10 mb-12 text-[#00375D] dark:text-blue-500"
+              >
+                Title for card
+              </h5>
+              <p
+                class="text-[1rem] leading-8 text-[#848486] pb-0 dark:text-gray-200"
+              >
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry
+              </p>
+              <a
+                href="#"
+                class="text-[#0000EE] pb-4 font-bold text-lg hover:scale-105"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <div
+            id="show"
+            class="shadow-sm shadow-gray-500 px-10 py-2 cursor-pointer m-auto w-[175.17px] bg-gradient-to-r from-[#00cee6] to-[#00e4ee] border-solid text-white font-bold rounded-md mt-10 mb-20 hover:scale-110"
+          >
+            Show More
+          </div>
+        </div>
+      </section>
+
+      <!--Footer-->
+      <footer
+        class="dark:bg-gradient-to-r dark:from-[#01030cf7] dark:to-[#000000e6] text-white font-bold bg-gradient-to-r from-[#001875f7] to-[#0076dee6] py-10"
+      >
+        <div
+          class="container mx-auto flex flex-col items-center justify-center"
+        >
+          <div class="icon container mx-auto text-center mb-0 animate-bounce">
+            <svg class="mx-auto z-20" width="50" height="50">
+              <polygon
+                fill="rgba(255, 98, 0, 0.97)"
+                points="37.32050807568878,30 20,40 2.679491924311229,30.000000000000007 2.679491924311222,10.000000000000005 19.999999999999996,0 37.32050807568878,10.000000000000007"
+              ></polygon>
+            </svg>
+
+            <i class="bx bx-detail z-30"></i>
+          </div>
+
+          <div class="subscribe flex flex-col justify-center items-center">
+            <h1 class="text-[2rem] mb-8 dark:text-blue-500">Stay updated !</h1>
+            <label
+              class="relative text-gray-400 focus-within:text-gray-600 block"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="pointer-events-none w-8 h-8 absolute top-1/2 transform -translate-y-1/2 left-3"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                />
+                <path
+                  d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                />
+              </svg>
+
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email@kemuscorp.com"
+                class="form-input border border-white py-3 px-4 bg-white placeholder-gray-400 text-gray-500 appearance-none w-80 md:w-96 block pl-14 focus:outline-none"
+              />
+            </label>
+
+            <a
+              class="shadow-sm shadow-gray-500 px-12 py-2 bg-gradient-to-r from-[#00cee6] to-[#00e4ee] border-solid text-white font-bold rounded-md mt-10 mb-20 hover:scale-110"
+              href=""
+            >
+              Subscribe
+            </a>
+          </div>
+
+          <div
+            class="copyright container flex flex-col justify-center md:grid md:grid-cols-3"
+          >
+            <!-- <div class="min-h-screen p-6 bg-gray-100 flex items-center justify-center"> -->
+
+            <div class="social flex justify-center md:justify-start gap-3 mb-5">
+              <i class="bx bxl-twitter text-3xl"></i>
+              <!-- <i class="fa-brands fa-twitter text-3xl"></i> -->
+              <i class="bx bxl-github text-3xl"></i>
+              <i class="bx bxs-file text-3xl"></i>
+            </div>
+            <p class="text-center text-white mb-5">
+              © 2022 Copyright, All rights reserved
+            </p>
+            <p class="text-white text-center md:text-right mb-5">
+              Made with <i class="bx bxs-heart text-purple-500"></i> by
+              <a href="#" class="text-purple-500 text-xl font-extrabold"
+                >Purple team</a
+              >
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!--to be removed-->
+    <script src="/js/script.js"></script>
+  </body>
+</html>
